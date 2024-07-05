@@ -1,6 +1,12 @@
 import styles from './index.module.css'
 
-export default function Header({openBasket, count}: {openBasket?: () => void}) {
+
+interface IProps {
+  openBasket?: () => void
+  count?: number
+}
+export default function Header(props: IProps) {
+  const {openBasket, count} = props
   const navClass = `navbar navbar-expand-lg bg-body-tertiary ${styles.header}`
   return (
     <nav className={navClass}  data-bs-theme="dark">
@@ -9,7 +15,7 @@ export default function Header({openBasket, count}: {openBasket?: () => void}) {
 
         <button onClick={openBasket} className={styles.basket} type="button" >
           <span>Корзина</span>
-          <span className={styles.basket__count}>{count}</span>
+          <span className={styles.basket__count}>{count || 0}</span>
         </button>
       </div>
     </nav>)

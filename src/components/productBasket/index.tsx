@@ -1,12 +1,14 @@
-interface IProps  {
-  card?: {
-    "id": number,
-    "title": string,
-    "price": number,
-    "description": string,
-    "category": string,
-    "image": string,
-  }
+export interface ICard {
+  "id": number,
+  "title": string,
+  "price": number,
+  "description": string,
+  "category": string,
+  "image": string,
+}
+
+export interface IProps  {
+  card?: ICard
 }
 
 export default function ProductBasket(props: IProps) {

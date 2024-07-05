@@ -1,7 +1,12 @@
 import styles from './index.module.css'
-import ProductBasket from "../productBasket";
+import ProductBasket, {ICard} from "../productBasket";
 
-export default function Modal({closeBasket, basket}: {closeBasket?: () => void, basket?: any[]}) {
+interface IProps {
+  closeBasket?: () => void,
+  basket?: ICard[]
+}
+export default function Modal(props: IProps) {
+  const {closeBasket, basket} = props
   const card = {
       "id": 3,
       "title": "Mens Cotton Jacket",
@@ -21,11 +26,9 @@ export default function Modal({closeBasket, basket}: {closeBasket?: () => void, 
       <div className={styles.modal__window}>
         <h1>Товары в корзине</h1>
         <ul>
-          {basket.map(item => {
-            return <li key={item.id}>
-              <ProductBasket card={item}/>
-            </li>
-          })}
+          <li>
+            <ProductBasket card={card}/>
+          </li>
         </ul>
       </div>
     </div>
