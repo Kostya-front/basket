@@ -1,0 +1,16 @@
+.card__item {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    gap: 20px;
+}
+.card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.card__bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
